@@ -52,6 +52,16 @@ class TestBooksCollector:
         collector.books_genre['Эркюль Пуаро'] = 'Детективы'
         assert collector.get_books_genre('Эркюль Пуаро') == 'Детективы'
 
+    def test_get_book_genre_old_dictionaty(self):
+        collector = BooksCollector()
+        collector.books_genre['Тайно потеряного тапка'] = 'Детективы'
+        collector.books_genre['Возвращение тапка'] = 'Комедии'
+        result = collector.get_books_genre()
+        assert result == {
+            'Тайно потеряного тапка': 'Детективы',
+            'Возвращение тапка': 'Комедии'
+        }
+
     def test_get_books_with_specific_genre_said_gener(self):
         collector = BooksCollector()
         collector.add_new_book('Синяя птица')
