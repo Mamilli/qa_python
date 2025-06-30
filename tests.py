@@ -47,7 +47,7 @@ class TestBooksCollector:
         collector.set_book_genre('Шерлок Холмс', 'Детективы')
         assert collector.books_genre['Шерлок Холмс'] == 'Детективы'
 
-    def test_get_book_genre_book(self):
+    def test_get_book_genre_book(self):  #я правильно поняла? или нужно добавить еще один тест?
         collector = BooksCollector()
         collector.books_genre['Эркюль Пуаро'] = 'Детективы'
         assert collector.get_books_genre('Эркюль Пуаро') == 'Детективы'
