@@ -49,8 +49,7 @@ class TestBooksCollector:
 
     def test_get_book_genre_book(self):
         collector = BooksCollector()
-        collector.add_new_book('Эркюль Пуаро')
-        collector.get_book_genre('Эркюль Пуаро', 'Детективы')
+        collector.books_genre['Эркюль Пуаро'] = 'Детективы'
         assert collector.get_books_genre('Эркюль Пуаро') == 'Детективы'
 
     def test_get_books_with_specific_genre_said_gener(self):
